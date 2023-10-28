@@ -9,5 +9,10 @@ class Equipamento extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'numero_serie', 'tipo'];
+    protected $fillable = ['id_equipamento', 'nome', 'numero_serie', 'tipo'];
+
+    public function alarmes()
+    {
+        return $this->hasMany(Alarme::class, 'id_equipamento', 'id_equipamento');
+    }
 }

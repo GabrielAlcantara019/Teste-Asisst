@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('equipamentos', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id_equipamento');
             $table->string('nome');
             $table->string('numero_serie');
             $table->enum('tipo', ['Tensão', 'Corrente', 'Óleo']);
