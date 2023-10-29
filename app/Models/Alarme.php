@@ -9,10 +9,20 @@ class Alarme extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id_alarme', 'id_equipamento', 'descricao', 'classificacao'];
+    protected $fillable = [
+        'id_alarme',
+        'id_equipamento', 
+        'descricao', 
+        'classificacao'
+    ];
 
     public function equipamento()
     {
         return $this->belongsTo(Equipamento::class, 'id_equipamento', 'id_equipamento');
+    }
+
+    public function alarmeAtuado()
+    {
+        return $this->hasMany(AlarmeAtuado::class, 'alarme_id', 'id');
     }
 }

@@ -9,7 +9,12 @@ class Equipamento extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id_equipamento', 'nome', 'numero_serie', 'tipo'];
+    protected $fillable = [
+        'id_equipamento', 
+        'nome', 
+        'numero_serie', 
+        'tipo'
+    ];
 
     public function alarmes()
     {
